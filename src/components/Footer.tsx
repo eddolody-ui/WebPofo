@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import {GiBoatHorizon} from "react-icons/gi";
 
 export function Footer() {
   return (
@@ -10,8 +11,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-primary"></div>
-              <span className="font-semibold">Alex Johnson</span>
+              <div><GiBoatHorizon/></div>
+              <span className="font-semibold">Min Thway</span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
               Full Stack Developer & Creative Designer passionate about building 
