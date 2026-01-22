@@ -1,10 +1,27 @@
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ArrowRight, Download } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   const sceneRef = useRef<HTMLDivElement>(null);
+  const [displayedText, setDisplayedText] = useState("");
+  const fullText = "Full Stack Developer & Creative Designer";
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100); // Adjust speed as needed
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const scene = sceneRef.current;
@@ -43,10 +60,16 @@ export function HeroSection() {
           ✨ Available for New Opportunities
         </Badge>
         <h1 className="mx-auto max-w-4xl text-4xl md:text-6xl lg:text-7xl tracking-tight mb-6">
-          Full Stack Developer &{" "}
-          <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Creative Designer
-          </span>
+          {displayedText.includes("Creative Designer") ? (
+            <>
+              Full Stack Developer &{" "}
+              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                Creative Designer
+              </span>
+            </>
+          ) : (
+            displayedText
+          )}
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
           Building beautiful, performant web applications with modern technologies. 
