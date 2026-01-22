@@ -55,7 +55,7 @@
       },
       "scripts": {
             "dev": "npx vite",
-            "build": "npx vite build",
+            "build": "dist",
             "preview": "npx vite preview"
       }
 }
