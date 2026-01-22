@@ -13,13 +13,13 @@ import { useEffect, useState } from "react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Delivery Management System",
     description:
-      "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built for scalability and performance.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      "Full-stack logistics solution with payment integration, inventory management and admin dashboard. Built for scalability and performance.",
+    tags: ["React", "Node.js", "MongoDB", "Render"],
     image:
       "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBzaG9wcGluZyUyMHdlYnNpdGV8ZW58MXx8fHwxNzY4OTU1ODE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    githubUrl: "#",
+    githubUrl: "https://github.com/eddolody-ui/DeliManagementSys",
     liveUrl: "#",
   },
   {
@@ -39,36 +39,6 @@ const projects = [
     tags: ["React", "WebRTC", "Socket.io", "Express"],
     image:
       "https://images.unsplash.com/photo-1739298061707-cefee19941b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3Njg4NjEzMDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    githubUrl: "#",
-    liveUrl: "#",
-  },
-  {
-    title: "Mobile Fitness App",
-    description:
-      "Cross-platform fitness tracking app with workout plans, progress analytics, and social features for motivation.",
-    tags: ["React Native", "Firebase", "Redux", "Chart.js"],
-    image:
-      "https://images.unsplash.com/photo-1767903622388-4949aad2bd93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwbW9iaWxlJTIwYXBwfGVufDF8fHx8MTc2ODkzOTk3MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    githubUrl: "#",
-    liveUrl: "#",
-  },
-  {
-    title: "Design System Library",
-    description:
-      "Comprehensive design system with reusable components, design tokens, and extensive documentation for enterprise use.",
-    tags: ["React", "Tailwind", "Storybook", "TypeScript"],
-    image:
-      "https://images.unsplash.com/photo-1698440050363-1697e5f0277c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzfGVufDF8fHx8MTc2ODkwMzA1Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    githubUrl: "#",
-    liveUrl: "#",
-  },
-  {
-    title: "Analytics Dashboard",
-    description:
-      "Data visualization dashboard with real-time metrics, customizable widgets, and export capabilities for business intelligence.",
-    tags: ["Vue.js", "D3.js", "Python", "FastAPI"],
-    image:
-      "https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBkYXRhfGVufDF8fHx8MTc2ODkwOTc3NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     githubUrl: "#",
     liveUrl: "#",
   },
@@ -126,12 +96,20 @@ export function ProjectsSection() {
                 </div>
                 <div className="flex gap-2">
                   <Button
+                    asChild
                     variant="outline"
                     size="sm"
                     className="flex-1"
                   >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Github className="h-4 w-4" />
+                      <span>Code</span>
+                    </a>
                   </Button>
                   <Button size="sm" className="flex-1">
                     <ExternalLink className="mr-2 h-4 w-4" />

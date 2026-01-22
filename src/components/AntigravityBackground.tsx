@@ -14,7 +14,7 @@ interface Particle {
 export function AntigravityBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -140,7 +140,7 @@ export function AntigravityBackground() {
       <canvas
         ref={canvasRef}
         className="fixed inset-0 pointer-events-none z-0"
-        style={{ opacity: 0.6 }}
+        style={{ opacity: 10 }}
       />
       {/* Additional CSS-based floating elements */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
