@@ -1,13 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { 
-  Code2, 
-  Palette, 
-  Database, 
-  Cloud,
-  Wrench,
-  Sparkles
-} from "lucide-react";
+import {
+  Code2,
+  Palette,
+  Database,
+  Wrench} from "lucide-react";
 
 const skillCategories = [
   {

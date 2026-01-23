@@ -2,7 +2,6 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ArrowRight, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 
 export function HeroSection() {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -87,7 +86,7 @@ export function HeroSection() {
         </div>
         
         {/* 3D Graphics Scene */}
-        <div className="relative mx-auto max-w-5xl h-96 lg:h-[500px]">
+        <div className="relative mx-auto max-w-5xl h-96 lg:h-125">
           <div 
             ref={sceneRef}
             className="relative w-full h-full perspective-1000"
