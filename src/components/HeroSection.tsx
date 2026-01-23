@@ -62,7 +62,7 @@ export function HeroSection() {
           {displayedText.includes("Creative Designer") ? (
             <>
               Full Stack Developer &{" "}
-              <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text">
                 Creative Designer
               </span>
             </>

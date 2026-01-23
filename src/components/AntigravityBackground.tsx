@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 interface Particle {
   x: number;
@@ -15,6 +16,8 @@ export function AntigravityBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animationFrameRef = useRef<number>(0);
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,7 +35,14 @@ export function AntigravityBackground() {
     window.addEventListener('resize', resizeCanvas);
 
     // Initialize particles
-    const colors = [
+    const colors = isDark ? [
+      'rgba(147, 197, 253, 0.4)',    // bright blue
+      'rgba(196, 181, 253, 0.4)',     // bright purple
+      'rgba(165, 180, 252, 0.4)',     // bright indigo
+      'rgba(103, 232, 249, 0.4)',     // bright cyan
+      'rgba(216, 180, 254, 0.4)',     // bright violet
+      'rgba(251, 146, 60, 0.4)',      // bright orange
+    ] : [
       'rgba(99, 102, 241, 0.15)',    // indigo
       'rgba(139, 92, 246, 0.15)',     // purple
       'rgba(59, 130, 246, 0.15)',     // blue
@@ -86,8 +96,14 @@ export function AntigravityBackground() {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
         ctx.fillStyle = particle.color;
-        ctx.strokeStyle = particle.color.replace('0.15', '0.3');
+        ctx.strokeStyle = particle.color.replace(isDark ? '0.4' : '0.15', isDark ? '0.6' : '0.3');
         ctx.lineWidth = 2;
+
+        // Add glow effect in dark mode
+        if (isDark) {
+          ctx.shadowColor = particle.color.replace('0.4', '1');
+          ctx.shadowBlur = 15;
+        }
 
         ctx.translate(particle.x, particle.y);
         
@@ -133,7 +149,7 @@ export function AntigravityBackground() {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [isDark]);
 
   return (
     <>
@@ -165,11 +181,15 @@ export function AntigravityBackground() {
               }}
             >
               <div
-                className="w-full h-full rounded-full blur-xl"
+                className={`w-full h-full rounded-full blur-xl ${isDark ? 'drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]' : ''}`}
                 style={{
-                  background: `radial-gradient(circle, 
-                    ${['#6366f1', '#8b5cf6', '#3b82f6', '#0ea5e9', '#a855f7', '#ec4899'][i % 6]}80, 
-                    transparent 70%)`
+                  background: `radial-gradient(circle,
+                    ${isDark
+                      ? ['#93c5fd', '#c4b5fd', '#a5b4fc', '#67e8f9', '#d8b4fe', '#fb923c'][i % 6]
+                      : ['#6366f1', '#8b5cf6', '#3b82f6', '#0ea5e9', '#a855f7', '#ec4899'][i % 6]
+                    }${isDark ? 'cc' : '80'},
+                    transparent 70%)`,
+                  filter: isDark ? 'drop-shadow(0 0 15px rgba(255,255,255,0.2))' : undefined
                 }}
               />
             </div>
@@ -179,9 +199,9 @@ export function AntigravityBackground() {
       
       {/* Animated gradient orbs */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-slow" />
-        <div className="absolute bottom-40 right-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '4s' }} />
+        <div className={`absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl animate-float-slow ${isDark ? 'bg-primary/20 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]' : 'bg-primary/5'}`} />
+        <div className={`absolute bottom-40 right-20 w-80 h-80 rounded-full blur-3xl animate-float-slow ${isDark ? 'bg-purple-500/20 drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]' : 'bg-purple-500/5'}`} style={{ animationDelay: '2s' }} />
+        <div className={`absolute top-1/2 left-1/3 w-72 h-72 rounded-full blur-3xl animate-float-slow ${isDark ? 'bg-blue-500/20 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'bg-blue-500/5'}`} style={{ animationDelay: '4s' }} />
       </div>
     </>
   );
