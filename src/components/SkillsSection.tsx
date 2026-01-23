@@ -51,7 +51,6 @@ const skillCategories = [
       { name: "Figma", level: 92 },
       { name: "Adobe XD", level: 85 },
       { name: "Prototyping", level: 88 },
-      { name: "Wireframing", level: 90 },
       { name: "User Research", level: 80 },
       { name: "Design Systems", level: 95 }
     ],

@@ -63,7 +63,7 @@ export function HeroSection() {
           {displayedText.includes("Creative Designer") ? (
             <>
               Full Stack Developer &{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Creative Designer
               </span>
             </>
@@ -94,7 +94,7 @@ export function HeroSection() {
             style={{ perspective: '1000px' }}
           >
             {/* Central Hub */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-primary to-primary/70 rounded-3xl shadow-2xl flex items-center justify-center z-10">
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-linear-to-br from-primary to-primary/70 rounded-3xl shadow-2xl flex items-center justify-center z-10">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center">
                 <div className="w-8 h-8 bg-primary rounded-lg"></div>
               </div>
