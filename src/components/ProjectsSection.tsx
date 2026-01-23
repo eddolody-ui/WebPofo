@@ -9,7 +9,7 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const projects = [
   {
@@ -45,7 +45,7 @@ const projects = [
 ];
 
 export function ProjectsSection() {
-  const [imageUrls, setImageUrls] = useState<string[]>([]);
+  const [] = useState<string[]>([]);
 
   return (
     <section id="projects" className="py-20 bg-muted/50">
