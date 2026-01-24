@@ -1,10 +1,26 @@
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ArrowRight, Download } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function HeroSection() {
   const sceneRef = useRef<HTMLDivElement>(null);
+  const [displayedText, setDisplayedText] = useState("");
+  const fullText = "Full Stack Developer & Creative Designer";
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100); // Adjust speed as needed
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const scene = sceneRef.current;
@@ -43,10 +59,16 @@ export function HeroSection() {
           ✨ Available for New Opportunities
         </Badge>
         <h1 className="mx-auto max-w-4xl text-4xl md:text-6xl lg:text-7xl tracking-tight mb-6">
-          Full Stack Developer &{" "}
-          <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Creative Designer
-          </span>
+          {displayedText.includes("Creative Designer") ? (
+            <>
+              Full Stack Developer &{" "}
+              <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text">
+                Creative Designer
+              </span>
+            </>
+          ) : (
+            displayedText
+          )}
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
           Building beautiful, performant web applications with modern technologies. 
@@ -64,14 +86,14 @@ export function HeroSection() {
         </div>
         
         {/* 3D Graphics Scene */}
-        <div className="relative mx-auto max-w-5xl h-96 lg:h-[500px]">
+        <div className="relative mx-auto max-w-5xl h-96 lg:h-125">
           <div 
             ref={sceneRef}
             className="relative w-full h-full perspective-1000"
             style={{ perspective: '1000px' }}
           >
             {/* Central Hub */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-primary to-primary/70 rounded-3xl shadow-2xl flex items-center justify-center z-10">
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-linear-to-br from-primary to-primary/70 rounded-3xl shadow-2xl flex items-center justify-center z-10">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center">
                 <div className="w-8 h-8 bg-primary rounded-lg"></div>
               </div>

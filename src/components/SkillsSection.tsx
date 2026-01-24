@@ -1,23 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { 
-  Code2, 
-  Palette, 
-  Database, 
-  Cloud,
-  Wrench,
-  Sparkles
-} from "lucide-react";
+import {
+  Code2,
+  Palette,
+  Database,
+  Wrench} from "lucide-react";
 
 const skillCategories = [
   {
     icon: Code2,
     title: "Frontend Development",
     skills: [
-      { name: "React", level: 95 },
-      { name: "TypeScript", level: 90 },
+      { name: "React", level: 65 },
+      { name: "TypeScript", level: 74 },
       { name: "Next.js", level: 85 },
-      { name: "Vue.js", level: 80 },
+      { name: "Vue.js", level: 60 },
       { name: "Tailwind CSS", level: 95 },
       { name: "HTML/CSS", level: 98 }
     ],
@@ -31,8 +28,6 @@ const skillCategories = [
       { name: "Express", level: 88 },
       { name: "Python", level: 80 },
       { name: "REST APIs", level: 92 },
-      { name: "GraphQL", level: 75 },
-      { name: "WebSockets", level: 85 }
     ],
     color: "bg-green-500"
   },
@@ -40,27 +35,11 @@ const skillCategories = [
     icon: Database,
     title: "Database & Storage",
     skills: [
-      { name: "PostgreSQL", level: 88 },
       { name: "MongoDB", level: 85 },
-      { name: "Redis", level: 78 },
       { name: "Firebase", level: 82 },
-      { name: "Prisma", level: 80 },
       { name: "MySQL", level: 85 }
     ],
     color: "bg-orange-500"
-  },
-  {
-    icon: Cloud,
-    title: "DevOps & Cloud",
-    skills: [
-      { name: "AWS", level: 80 },
-      { name: "Docker", level: 85 },
-      { name: "CI/CD", level: 82 },
-      { name: "Vercel", level: 90 },
-      { name: "Git", level: 95 },
-      { name: "Linux", level: 78 }
-    ],
-    color: "bg-cyan-500"
   },
   {
     icon: Palette,
@@ -69,7 +48,6 @@ const skillCategories = [
       { name: "Figma", level: 92 },
       { name: "Adobe XD", level: 85 },
       { name: "Prototyping", level: 88 },
-      { name: "Wireframing", level: 90 },
       { name: "User Research", level: 80 },
       { name: "Design Systems", level: 95 }
     ],

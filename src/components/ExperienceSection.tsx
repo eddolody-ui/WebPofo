@@ -82,11 +82,11 @@ export function ExperienceSection() {
         <div className="max-w-4xl mx-auto space-y-6 mb-16">
           {experiences.map((exp, index) => (
             <Card key={index} className="relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-primary/50" />
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-primary to-primary/50" />
               <CardContent className="p-6 pl-8">
                 <div className="flex items-start justify-between mb-4 flex-wrap gap-4">
                   <div className="flex items-start space-x-4">
-                    <div className={`p-2 rounded-lg ${exp.type === 'work' ? 'bg-primary/10' : 'bg-green-500/10'} flex-shrink-0 mt-1`}>
+                    <div className={`p-2 rounded-lg ${exp.type === 'work' ? 'bg-primary/10' : 'bg-green-500/10'} shrink-0 mt-1`}>
                       {exp.type === 'work' ? (
                         <Briefcase className="h-5 w-5 text-primary" />
                       ) : (
@@ -111,7 +111,7 @@ export function ExperienceSection() {
                   <ul className="space-y-2 mb-4">
                     {exp.achievements.map((achievement, achIndex) => (
                       <li key={achIndex} className="flex items-start">
-                        <span className="text-primary mr-2 flex-shrink-0">•</span>
+                        <span className="text-primary mr-2 shrink-0">•</span>
                         <span className="text-sm">{achievement}</span>
                       </li>
                     ))}
