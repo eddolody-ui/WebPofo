@@ -75,14 +75,18 @@ export function HeroSection() {
           Passionate about creating seamless user experiences and scalable solutions.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <Button size="lg" className="w-full sm:w-auto">
-            View My Projects
-            <ArrowRight className="ml-2 h-4 w-4" />
+          <Button asChild size="lg" className="w-full sm:w-auto">
+            <a href="#projects">
+              View My Projects
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
+          <a href='/RESUME(WebPofo).pdf' download>
           <Button variant="outline" size="lg" className="w-full sm:w-auto">
             <Download className="mr-2 h-4 w-4" />
             Download Resume
           </Button>
+          </a>
         </div>
         
         {/* 3D Graphics Scene */}

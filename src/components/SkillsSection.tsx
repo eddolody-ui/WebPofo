@@ -16,7 +16,6 @@ const skillCategories = [
       { name: "Next.js", level: 85 },
       { name: "Vue.js", level: 60 },
       { name: "Tailwind CSS", level: 95 },
-      { name: "HTML/CSS", level: 98 }
     ],
     color: "bg-blue-500"
   },
@@ -47,8 +46,6 @@ const skillCategories = [
     skills: [
       { name: "Figma", level: 92 },
       { name: "Adobe XD", level: 85 },
-      { name: "Prototyping", level: 88 },
-      { name: "User Research", level: 80 },
       { name: "Design Systems", level: 95 }
     ],
     color: "bg-purple-500"
@@ -59,9 +56,6 @@ const skillCategories = [
     skills: [
       { name: "VS Code", level: 98 },
       { name: "Postman", level: 90 },
-      { name: "Jest", level: 85 },
-      { name: "Storybook", level: 88 },
-      { name: "Webpack", level: 75 },
       { name: "Vite", level: 90 }
     ],
     color: "bg-indigo-500"

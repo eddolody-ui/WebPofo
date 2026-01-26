@@ -5,55 +5,66 @@ import { Briefcase, GraduationCap, Award } from "lucide-react";
 const experiences = [
   {
     type: "work",
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    period: "2022 - Present",
-    description: "Leading development of enterprise web applications, mentoring junior developers, and architecting scalable solutions for Fortune 500 clients.",
+    title: "IT Support",
+    company: "Kings International School",
+    period: "2025 May - Present",
+    description: "Support end-users (software and hardware) and website issues",
     achievements: [
-      "Improved application performance by 60% through optimization",
-      "Led team of 5 developers on major client projects",
-      "Implemented CI/CD pipeline reducing deployment time by 70%"
+      "Provide technical support during school events",
+      "Manage inventory and stock control and coordinate with the Admin and Management departments",
+      "Monitor and manage requests from various departments."
     ],
-    tags: ["React", "Node.js", "AWS", "Team Leadership"]
+    tags: ["Odoo", "Python"]
   },
   {
     type: "work",
-    title: "Full Stack Developer",
-    company: "StartupHub Inc.",
-    period: "2020 - 2022",
-    description: "Developed and maintained multiple web applications, collaborated with design team, and contributed to product strategy decisions.",
+    title: "Data Entry",
+    company: "Kings International School",
+    period: "2025 Jan - May",
+    description: "Handle daily data document tasks for academic and office departments across all campuses.",
     achievements: [
-      "Built 3 production applications from scratch",
-      "Reduced API response time by 40%",
-      "Implemented design system used across all products"
+      "Analyze the data of employee from all campush",
+      "Upload the data into the Software system",
+      "Analyze the data of employee from all campus"
     ],
-    tags: ["Vue.js", "Python", "PostgreSQL", "Docker"]
+    tags: ["Microsoft Office", "Teams", "OutLook"]
   },
   {
     type: "work",
-    title: "Frontend Developer",
-    company: "Digital Agency XYZ",
-    period: "2018 - 2020",
-    description: "Created responsive websites and web applications for various clients, ensuring pixel-perfect implementation of designs.",
+    title: "Purchasing Data Controller",
+    company: "Myanmar pharmaceutical industrial enterprise (MPIE)",
+    period: "2024 - 2025",
+    description: "Verified pricing, inspected product quality, and ensured smooth procurement processes. ",
     achievements: [
-      "Delivered 20+ client projects on time and within budget",
-      "Improved website accessibility scores to 95+",
-      "Mentored 3 junior developers"
+      "Conduct price verification for companies or individuals that meet the required standards.",
+      "Perform quality inspection and acceptance of products awarded by the factory.",
+      "Submit Purchase Completion and Business Completion reports."
     ],
-    tags: ["JavaScript", "HTML/CSS", "React", "UI/UX"]
+    tags: ["ERP", "Microsoft Office"]
   },
+    {
+    type: "work",
+    title: "Operation Assistant",
+    company: "Ninjavan Myanmar",
+    period: "2023 - 2024",
+    description: "Managed multiple operational areas, supervised a team of 21 employees, and maintained daily reports for management.",
+    achievements: [
+      "Assigned daily tasks and job duties to employees.",
+      "Checked and managed operational areas and shared updates with relevant teams.",
+      "Monitored performance and motivated teams to meet target success rates."
+    ],
+    tags: ["Ninjavan Webapp", "Microsoft Office"]
+  },
+
   {
     type: "education",
-    title: "Bachelor of Computer Science",
-    company: "State University",
-    period: "2014 - 2018",
-    description: "Graduated with honors. Focused on software engineering, algorithms, and web technologies.",
+    title: "Bachelor of Art In History",
+    company: "Dagon University",
+    period: "2023 - Present",
+    description: "",
     achievements: [
-      "GPA: 3.8/4.0",
-      "Dean's List for 6 semesters",
-      "Led university hackathon team to 1st place"
     ],
-    tags: ["Computer Science", "Software Engineering"]
+    tags: []
   }
 ];
 
