@@ -13,25 +13,47 @@ export function Header() {
             <span className="font-semibold">Min Thway</span>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#about"
+              className="relative inline-block text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            >
               About
             </a>
-            <a href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#projects"
+              className="relative inline-block text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            >
               Projects
             </a>
-            <a href="#skills" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#skills"
+              className="relative inline-block text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            >
               Skills
             </a>
-            <a href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#experience"
+              className="relative inline-block text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            >
               Experience
             </a>
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="hidden md:inline-flex">
-            Download Resume
+          <Button variant="ghost" className="hidden md:inline-flex" asChild>
+            <a href="/RESUME(WebPofo).pdf" download>
+              Download Resume
+            </a>
           </Button>
-          <Button>Contact Me</Button>
+          <Button asChild>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=eddlolody@gmail.com&su=Portfolio%20Inquiry"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contact Me
+            </a>
+          </Button>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-4 w-4" />
           </Button>

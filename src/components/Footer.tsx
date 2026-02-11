@@ -1,5 +1,3 @@
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
 import {GiBoatHorizon} from "react-icons/gi";
@@ -23,10 +21,10 @@ export function Footer() {
             <div className="flex space-x-4">
               <a 
                 href="https://github.com" 
-                target="_blank" 
+                target="https://github.com/eddolody-ui" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-background hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
+              > 
                 <Github className="h-5 w-5" />
               </a>
               <a 
@@ -46,7 +44,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:alex@example.com"
+                href="mailto:eddlolody@gmail.com"
                 className="p-2 rounded-lg bg-background hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -68,18 +66,18 @@ export function Footer() {
             <h4 className="font-medium mb-4">Get in Touch</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start space-x-2">
-                <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <a href="mailto:alex@example.com" className="hover:text-foreground transition-colors">
-                  alex@example.com
+                <Mail className="h-4 w-4 mt-0.5 shrink-0" />
+                <a href="mailto:eddolody@gmail.com" className="hover:text-foreground transition-colors">
+                  eddolody@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <Phone className="h-4 w-4 mt-0.5 shrink-0" />
+                <span>+95 9971830904</span>
               </li>
               <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>San Francisco, CA</span>
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                <span>Thingangyun, Thuwunna, Yangon</span>
               </li>
             </ul>
           </div>
@@ -89,7 +87,7 @@ export function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2026 Alex Johnson. All rights reserved.
+            © 2026 Min Thway. All rights reserved.
           </p>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">
             <span>Built with React & Tailwind CSS</span>

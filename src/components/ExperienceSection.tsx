@@ -1,6 +1,7 @@
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Briefcase, GraduationCap, Award } from "lucide-react";
+import { motion } from "motion/react";
 
 const experiences = [
   {
@@ -42,7 +43,7 @@ const experiences = [
     ],
     tags: ["ERP", "Microsoft Office"]
   },
-    {
+  {
     type: "work",
     title: "Operation Assistant",
     company: "Ninjavan Myanmar",
@@ -55,15 +56,13 @@ const experiences = [
     ],
     tags: ["Ninjavan Webapp", "Microsoft Office"]
   },
-
   {
     type: "education",
     title: "Bachelor of Art In History",
     company: "Dagon University",
     period: "2023 - Present",
     description: "",
-    achievements: [
-    ],
+    achievements: [],
     tags: []
   }
 ];
@@ -88,59 +87,79 @@ export function ExperienceSection() {
             and technology.
           </p>
         </div>
-        
+
         {/* Timeline */}
         <div className="max-w-4xl mx-auto space-y-6 mb-16">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-primary to-primary/50" />
-              <CardContent className="p-6 pl-8">
-                <div className="flex items-start justify-between mb-4 flex-wrap gap-4">
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-2 rounded-lg ${exp.type === 'work' ? 'bg-primary/10' : 'bg-green-500/10'} shrink-0 mt-1`}>
-                      {exp.type === 'work' ? (
-                        <Briefcase className="h-5 w-5 text-primary" />
-                      ) : (
-                        <GraduationCap className="h-5 w-5 text-green-600" />
-                      )}
+          {experiences.map((exp, index) => {
+            const experienceCard = (
+              <Card className="relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-primary to-primary/50" />
+                <CardContent className="p-6 pl-8">
+                  <div className="flex items-start justify-between mb-4 flex-wrap gap-4">
+                    <div className="flex items-start space-x-4">
+                      <div
+                        className={`p-2 rounded-lg ${
+                          exp.type === "work" ? "bg-primary/10" : "bg-green-500/10"
+                        } shrink-0 mt-1`}
+                      >
+                        {exp.type === "work" ? (
+                          <Briefcase className="h-5 w-5 text-primary" />
+                        ) : (
+                          <GraduationCap className="h-5 w-5 text-green-600" />
+                        )}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
+                        <p className="text-primary font-medium">{exp.company}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
-                      <p className="text-primary font-medium">{exp.company}</p>
+                    <Badge variant="secondary" className="whitespace-nowrap">
+                      {exp.period}
+                    </Badge>
+                  </div>
+
+                  <p className="text-muted-foreground mb-4 ml-12">{exp.description}</p>
+
+                  <div className="ml-12">
+                    <ul className="space-y-2 mb-4">
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <li key={achIndex} className="flex items-start">
+                          <span className="text-primary mr-2 shrink-0">*</span>
+                          <span className="text-sm">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2">
+                      {exp.tags.map((tag, tagIndex) => (
+                        <Badge key={tagIndex} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                  <Badge variant="secondary" className="whitespace-nowrap">
-                    {exp.period}
-                  </Badge>
-                </div>
-                
-                <p className="text-muted-foreground mb-4 ml-12">
-                  {exp.description}
-                </p>
-                
-                <div className="ml-12">
-                  <ul className="space-y-2 mb-4">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex items-start">
-                        <span className="text-primary mr-2 shrink-0">•</span>
-                        <span className="text-sm">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+
+            if (exp.type !== "education") {
+              return <div key={index}>{experienceCard}</div>;
+            }
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+              >
+                {experienceCard}
+              </motion.div>
+            );
+          })}
         </div>
-        
+
         {/* Certifications */}
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center space-x-2 mb-6">

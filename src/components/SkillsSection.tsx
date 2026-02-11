@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { motion } from "motion/react";
 import {
   Code2,
   Palette,
@@ -66,7 +67,13 @@ export function SkillsSection() {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight mb-4">
             Skills & Expertise
           </h2>
@@ -74,44 +81,58 @@ export function SkillsSection() {
             A comprehensive overview of my technical skills and proficiency levels
             across various technologies and tools.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="relative overflow-hidden">
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className={`p-2 rounded-lg ${category.color} bg-opacity-10`}>
-                    <category.icon className={`h-6 w-6 ${category.color.replace('bg-', 'text-')}`} />
-                  </div>
-                  <CardTitle className="text-lg">{category.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <Badge variant="secondary" className="text-xs">
-                          {skill.level}%
-                        </Badge>
-                      </div>
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className={`h-full ${category.color} transition-all duration-1000 ease-out rounded-full`}
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+            >
+              <Card className="relative h-full overflow-hidden">
+                <CardHeader>
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className={`p-2 rounded-lg ${category.color} bg-opacity-10`}>
+                      <category.icon className={`h-6 w-6 ${category.color.replace('bg-', 'text-')}`} />
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skillIndex}>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium">{skill.name}</span>
+                          <Badge variant="secondary" className="text-xs">
+                            {skill.level}%
+                          </Badge>
+                        </div>
+                        <div className="h-2 bg-muted rounded-full overflow-hidden">
+                          <div 
+                            className={`h-full ${category.color} transition-all duration-1000 ease-out rounded-full`}
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
         
         {/* Additional Skills */}
-        <div className="mt-12 text-center">
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <h3 className="text-xl font-semibold mb-4">Additional Competencies</h3>
           <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
             {[
@@ -133,7 +154,7 @@ export function SkillsSection() {
               </Badge>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
