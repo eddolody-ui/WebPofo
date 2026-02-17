@@ -32,16 +32,6 @@ const projects = [
     githubUrl: "https://github.com/eddolody-ui/LibraryForClient.git",
     liveUrl: "https://libraryforclient.onrender.com",
   },
-  {
-    title: "Real-Time Collaboration Tool",
-    description:
-      "Collaborative workspace with real-time editing, video calls, and team chat. Built with WebRTC and WebSockets.",
-    tags: ["React", "WebRTC", "Socket.io", "Express"],
-    image:
-      "https://images.unsplash.com/photo-1739298061707-cefee19941b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3Njg4NjEzMDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    githubUrl: "#",
-    liveUrl: "#",
-  },
 ];
 
 export function ProjectsSection() {
