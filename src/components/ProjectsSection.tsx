@@ -20,17 +20,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBzaG9wcGluZyUyMHdlYnNpdGV8ZW58MXx8fHwxNzY4OTU1ODE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     githubUrl: "https://github.com/eddolody-ui/DeliManagementSys",
-    liveUrl: "#",
-  },
-  {
-    title: "AI Task Manager",
-    description:
-      "Intelligent task management app with AI-powered priority suggestions and natural language processing for task creation.",
-    tags: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL"],
-    image:
-      "https://images.unsplash.com/photo-1737505191896-8e3cb72e4df9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXNrJTIwbWFuYWdlciUyMHByb2R1Y3Rpdml0eSUyMGFwcHxlbnwxfHx8fDE3Njg5NjcyOTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://retailshop-duv7.onrender.com",
   },
   {
     title: "Real-Time Collaboration Tool",
